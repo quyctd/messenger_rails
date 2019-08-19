@@ -203,3 +203,47 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 21323ms (Views: 21315.1ms | ActiveRecord: 0.0ms | Allocations: 7664826)
 
 
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <main> at /Users/soramac/Documents/Pixta/Ruby Course/message_me/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2019-08-19 23:42:32 +0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 200)
+Completed 200 OK in 10134ms (Views: 10103.1ms | ActiveRecord: 0.0ms | Allocations: 4295266)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-19 23:43:19 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 85)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 14517)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-19 23:43:33 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 78)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 14495)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-19 23:44:56 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 77)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 14491)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-19 23:46:14 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 78)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms | Allocations: 14504)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-08-19 23:46:17 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 80)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 14086)
+
+
