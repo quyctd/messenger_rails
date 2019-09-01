@@ -2,6 +2,7 @@
 
 class SessionsController < ApplicationController
   before_action :user_from_form, only: [:create]
+  before_action :logged_in_redirect, except: [:destroy]
 
   def new
     @account = User.new
@@ -28,5 +29,12 @@ class SessionsController < ApplicationController
 
   def user_from_form
     @user = User.find_by(username: params[:user][:username].downcase)
+  end
+
+  def logged_in_redirect
+    if logged_in?
+      flash[:negative] = 'You are already logged in.'
+      redirect_to root_path
+    end
   end
 end
