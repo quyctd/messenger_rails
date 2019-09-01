@@ -496,3 +496,182 @@ Processing by ChatroomController#index as HTML
 Completed 200 OK in 1902ms (Views: 1899.3ms | ActiveRecord: 0.0ms | Allocations: 1307077)
 
 
+Started GET "/" for ::1 at 2019-09-01 11:55:19 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 85)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 130)
+Completed 200 OK in 59ms (Views: 57.6ms | ActiveRecord: 0.0ms | Allocations: 64249)
+
+
+Started GET "/" for ::1 at 2019-09-01 11:56:42 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 135)
+Completed 200 OK in 125ms (Views: 123.2ms | ActiveRecord: 0.0ms | Allocations: 64215)
+
+
+Started GET "/" for ::1 at 2019-09-01 11:56:58 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 85)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 130)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.0ms | Allocations: 64226)
+
+
+Started GET "/" for ::1 at 2019-09-01 11:57:31 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 85)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 130)
+Completed 200 OK in 84ms (Views: 80.8ms | ActiveRecord: 0.0ms | Allocations: 64213)
+
+
+Started GET "/" for ::1 at 2019-09-01 11:58:19 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 84)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 130)
+Completed 200 OK in 123ms (Views: 120.3ms | ActiveRecord: 0.0ms | Allocations: 64206)
+
+
+Started GET "/" for ::1 at 2019-09-01 12:01:39 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 105)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 130)
+Completed 200 OK in 69ms (Views: 67.6ms | ActiveRecord: 0.0ms | Allocations: 64227)
+
+
+Started GET "/" for ::1 at 2019-09-01 12:02:47 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 137)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 130)
+Completed 200 OK in 112ms (Views: 110.3ms | ActiveRecord: 0.0ms | Allocations: 64258)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 12:09:30 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 269)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 141)
+Completed 200 OK in 1721ms (Views: 1710.6ms | ActiveRecord: 0.0ms | Allocations: 1565917)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 12:12:37 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 152)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 130)
+Completed 200 OK in 63ms (Views: 62.1ms | ActiveRecord: 0.0ms | Allocations: 64295)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 12:13:40 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 161)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 130)
+Completed 200 OK in 101ms (Views: 97.5ms | ActiveRecord: 0.0ms | Allocations: 64304)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 12:13:50 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 156)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 135)
+Completed 200 OK in 158ms (Views: 153.4ms | ActiveRecord: 0.0ms | Allocations: 64297)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 12:15:11 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 155)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 141)
+Completed 200 OK in 6812ms (Views: 6810.8ms | ActiveRecord: 0.0ms | Allocations: 2879631)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 13:41:14 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 165)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 130)
+Completed 200 OK in 88ms (Views: 85.2ms | ActiveRecord: 0.0ms | Allocations: 63825)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 13:44:31 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 164)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 130)
+Completed 200 OK in 71ms (Views: 69.4ms | ActiveRecord: 0.0ms | Allocations: 63816)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 13:45:16 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 164)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 130)
+Completed 200 OK in 69ms (Views: 68.0ms | ActiveRecord: 0.0ms | Allocations: 63822)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 13:45:52 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 165)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 130)
+Completed 200 OK in 68ms (Views: 66.6ms | ActiveRecord: 0.0ms | Allocations: 63817)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 13:45:57 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 165)
+  Rendered layouts/_navbar.html.erb (Duration: 3.1ms | Allocations: 130)
+Completed 200 OK in 94ms (Views: 92.6ms | ActiveRecord: 0.0ms | Allocations: 63821)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 13:46:15 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 165)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 130)
+Completed 200 OK in 76ms (Views: 75.2ms | ActiveRecord: 0.0ms | Allocations: 63817)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 13:52:06 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 144)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 130)
+Completed 200 OK in 64ms (Views: 62.5ms | ActiveRecord: 0.0ms | Allocations: 63799)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 13:52:56 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 143)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 130)
+Completed 200 OK in 101ms (Views: 99.9ms | ActiveRecord: 0.0ms | Allocations: 63792)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 13:53:17 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 143)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 135)
+Completed 200 OK in 147ms (Views: 145.5ms | ActiveRecord: 0.0ms | Allocations: 63821)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 13:53:31 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 143)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 130)
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.0ms | Allocations: 63805)
+
+
