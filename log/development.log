@@ -1713,3 +1713,432 @@ Completed 200 OK in 114ms (Views: 112.7ms | ActiveRecord: 0.7ms | Allocations: 6
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2019-09-01 19:55:35 +0700
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 23.6ms | Allocations: 7383)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 51.4ms | Allocations: 12039)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 4.4ms | Allocations: 1019)
+  Rendered layouts/_notice.html.erb (Duration: 0.7ms | Allocations: 167)
+Completed 200 OK in 2041ms (Views: 2018.2ms | ActiveRecord: 1.7ms | Allocations: 1597525)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-09-01 19:55:53 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 14.4ms | Allocations: 1046)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 647)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 121ms (Views: 115.2ms | ActiveRecord: 0.1ms | Allocations: 64154)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-09-01 19:55:54 +0700
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"x+eWNDYTdraRwjuNGmKYMS7m8Tpa/pNtzI97rdwuv9qPIGwDJznnhDA4as1bxVqjTywQFi0FUDoWa0/OgIPygw==", "user"=>{"username"=>"quyctd", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "quyctd"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:30:in `user_from_form'
+Redirected to http://localhost:3000/
+Completed 200 OK in 233ms (ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 19:55:54 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 3.3ms | Allocations: 711)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1427)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 611)
+  Rendered layouts/_notice.html.erb (Duration: 0.2ms | Allocations: 20)
+Completed 200 OK in 99ms (Views: 97.8ms | ActiveRecord: 0.4ms | Allocations: 63761)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:00:33 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 10.8ms | Allocations: 5507)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 9521)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 694)
+  Rendered layouts/_notice.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 84ms (Views: 78.6ms | ActiveRecord: 2.0ms | Allocations: 72700)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:37:09 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 3.8ms | Allocations: 850)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1881)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 13.8ms | Allocations: 4420)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 0.9ms | Allocations: 69140)
+
+
+  
+ActionView::Template::Error (undefined method `username' for nil:NilClass):
+     9:         Account <i class="dropdown icon"></i>
+    10:         <div class="menu">
+    11:           <% if logged_in? %>
+    12:             <p>Hello <%= @current_user.username %></p>
+    13:             <%= link_to "Log out", logout_path, class: 'item', method: :delete %>
+    14:           <% else %>
+    15:             <%= link_to "Log in", login_path, class: 'item' %>
+  
+app/views/layouts/_navbar.html.erb:12
+app/views/layouts/application.html.erb:14
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:38:16 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 2.0ms | Allocations: 852)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1880)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.0ms | Allocations: 891)
+  Rendered layouts/_notice.html.erb (Duration: 0.6ms | Allocations: 158)
+Completed 200 OK in 106ms (Views: 104.3ms | ActiveRecord: 0.4ms | Allocations: 66036)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:38:42 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 3.5ms | Allocations: 835)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1843)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 6.8ms | Allocations: 884)
+  Rendered layouts/_notice.html.erb (Duration: 0.7ms | Allocations: 158)
+Completed 200 OK in 140ms (Views: 136.9ms | ActiveRecord: 0.6ms | Allocations: 65939)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-09-01 20:38:51 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 666)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 630)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 74ms (Views: 71.5ms | ActiveRecord: 0.2ms | Allocations: 63738)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-09-01 20:38:58 +0700
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"4Ei678KYvZsNNyBFMQcugi9q9yTTAUNDEB1Zl3bzmg9GH2zZNLftp+HsF0a4OtC2w951XXUMg5/hacI/BdpRsQ==", "user"=>{"username"=>"datnt", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "datnt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:30:in `user_from_form'
+Redirected to http://localhost:3000/
+Completed 200 OK in 240ms (ActiveRecord: 0.2ms | Allocations: 1213)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:38:58 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 4.5ms | Allocations: 711)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1426)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 657)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 20)
+Completed 200 OK in 149ms (Views: 147.7ms | ActiveRecord: 0.6ms | Allocations: 63819)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:48:34 +0700
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 61.8ms | Allocations: 7546)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 106.5ms | Allocations: 12328)
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 54739.4ms | Allocations: 98424)
+  Rendered layouts/_notice.html.erb (Duration: 6.1ms | Allocations: 173)
+Completed 200 OK in 91651ms (Views: 68036.8ms | ActiveRecord: 11.8ms | Allocations: 1739103)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:50:43 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 18.9ms | Allocations: 7412)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 26.5ms | Allocations: 12388)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 9.9ms | Allocations: 3040)
+  Rendered layouts/_notice.html.erb (Duration: 1.0ms | Allocations: 167)
+Completed 200 OK in 1810ms (Views: 1797.2ms | ActiveRecord: 2.0ms | Allocations: 1580312)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:50:57 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 5.0ms | Allocations: 851)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 1723)
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 24639.6ms | Allocations: 31397)
+  Rendered layouts/_notice.html.erb (Duration: 2.2ms | Allocations: 23)
+Completed 200 OK in 32481ms (Views: 29487.7ms | ActiveRecord: 7.5ms | Allocations: 150754)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:52:10 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 4.3ms | Allocations: 850)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1721)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 16391.9ms | Allocations: 14958)
+  Rendered layouts/_notice.html.erb (Duration: 0.4ms | Allocations: 23)
+Completed 200 OK in 16621ms (Views: 16614.7ms | ActiveRecord: 1.7ms | Allocations: 78717)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:52:43 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 36.3ms | Allocations: 7545)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 63.4ms | Allocations: 12263)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 77826.2ms | Allocations: 20905)
+  Rendered layouts/_notice.html.erb (Duration: 1.0ms | Allocations: 173)
+Completed 200 OK in 83381ms (Views: 83357.3ms | ActiveRecord: 5.2ms | Allocations: 1598427)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-09-01 20:54:13 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NJG7+4zyqv8HLpmci6CK4IR5PuEqFBegCtShC6msdneSxm3Net36w+v1rp8CnXTUaM28mIwZ13z7oDqj2oW9yQ=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms | Allocations: 695)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-09-01 20:54:13 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 1165)
+  Rendered layouts/_navbar.html.erb (Duration: 17950.3ms | Allocations: 7562)
+  Rendered layouts/_notice.html.erb (Duration: 4.0ms | Allocations: 22)
+Completed 200 OK in 18239ms (Views: 18232.8ms | ActiveRecord: 0.0ms | Allocations: 71386)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-09-01 20:55:00 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"JA9Kwc5XfZ023Uje1ytTCSR4V63xGeVGpIq9mSPQLuiCWJz3OHgtodoGf91eFq09yMzV1FcUJZpV/iYxUPnlVg==", "user"=>{"username"=>"datnt", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "datnt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:30:in `user_from_form'
+Redirected to http://localhost:3000/
+Completed 200 OK in 267ms (ActiveRecord: 1.9ms | Allocations: 6103)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:55:01 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 8.3ms | Allocations: 1604)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 68.1ms | Allocations: 5432)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 18622.6ms | Allocations: 12771)
+  Rendered layouts/_notice.html.erb (Duration: 0.9ms | Allocations: 22)
+Completed 200 OK in 18952ms (Views: 18937.6ms | ActiveRecord: 5.7ms | Allocations: 80750)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:55:58 +0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 36.6ms | Allocations: 7544)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 60.9ms | Allocations: 12666)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 48546.9ms | Allocations: 6473)
+  Rendered layouts/_notice.html.erb (Duration: 0.5ms | Allocations: 167)
+Completed 200 OK in 53460ms (Views: 53440.8ms | ActiveRecord: 4.7ms | Allocations: 1584511)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 20:57:30 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 11.1ms | Allocations: 7383)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 12094)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 7.8ms | Allocations: 2053)
+  Rendered layouts/_notice.html.erb (Duration: 0.8ms | Allocations: 167)
+Completed 200 OK in 1701ms (Views: 1688.9ms | ActiveRecord: 2.0ms | Allocations: 1579247)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-09-01 21:03:35 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"OuzqVYh+ydxW1ECBqSj2LsWII/L7uURNhCA8KP2rNdmcuzxjflGZ4LoPd4IgFQgaKTyhi120hJF1VKeAjoL+Zw=="}
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 552)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-09-01 21:03:35 +0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1045)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 98)
+  Rendered layouts/_notice.html.erb (Duration: 0.2ms | Allocations: 20)
+Completed 200 OK in 71ms (Views: 65.9ms | ActiveRecord: 0.0ms | Allocations: 63563)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-09-01 21:03:39 +0700
+Processing by SessionsController#create as JS
+  Parameters: {"authenticity_token"=>"Lz0FHcjuaWLHYSpt1TJvoJ3vdQOHjO0dpP4j0AIo6R+JatMrPsE5Xiu6HW5cD5GUcVv3eiGBLcFVirh4cQEioQ==", "user"=>{"username"=>"datnt", "password"=>"[FILTERED]"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "datnt"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:30:in `user_from_form'
+Redirected to http://localhost:3000/
+Completed 200 OK in 236ms (ActiveRecord: 0.3ms | Allocations: 1216)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-01 21:03:40 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 2.3ms | Allocations: 726)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1457)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.2ms | Allocations: 1626)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 20)
+Completed 200 OK in 106ms (Views: 104.1ms | ActiveRecord: 0.7ms | Allocations: 64799)
+
+

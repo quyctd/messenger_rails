@@ -18,6 +18,12 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session[:user_id] = nil
+    flash[:success] = 'You have successfully logged in'
+    redirect_to login_path
+  end
+
   private
 
   def user_from_form
