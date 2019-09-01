@@ -16,7 +16,7 @@ require('jquery');
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 //= require jquery
-//= require semantic-ui
+require('semantic-ui');
 
 window.jQuery = $;
 window.$ = $;

@@ -382,3 +382,108 @@ Processing by ChatroomController#index as HTML
 Completed 200 OK in 4108ms (Views: 4099.0ms | ActiveRecord: 0.0ms | Allocations: 1498061)
 
 
+Started GET "/" for ::1 at 2019-09-01 11:04:16 +0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 373)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/soramac/Documents/Pixta/Ruby Course/message_me/public/packs
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 114)
+Completed 200 OK in 32953ms (Views: 32922.1ms | ActiveRecord: 0.0ms | Allocations: 7700610)
+
+
+Started GET "/" for ::1 at 2019-09-01 11:12:37 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 2533ms (Views: 2532.0ms | ActiveRecord: 0.0ms | Allocations: 14194)
+
+
+Started GET "/" for ::1 at 2019-09-01 11:15:29 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 83)
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 0.0ms | Allocations: 102949)
+
+
+  
+ActionView::Template::Error (undefined method `javascript_link_tag' for #<#<Class:0x00007faa06975358>:0x00007faa0697f380>
+Did you mean?  javascript_tag
+               javascript_pack_tag):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_link_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2019-09-01 11:28:24 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 78)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 104)
+Completed 200 OK in 28ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 13291)
+
+
+Started GET "/" for ::1 at 2019-09-01 11:29:38 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 6)
+Completed 200 OK in 17ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 11901)
+
+
+Started GET "/" for ::1 at 2019-09-01 11:30:08 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 77)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms | Allocations: 19407)
+
+
+  
+ActionView::Template::Error (The asset "application.js" is not present in the asset pipeline.):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2019-09-01 11:31:36 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 18284)
+
+
+  
+ActionView::Template::Error (The asset "application.js" is not present in the asset pipeline.):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/views/layouts/application.html.erb:9
+Started GET "/" for ::1 at 2019-09-01 11:32:20 +0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 274)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 114)
+Completed 200 OK in 9325ms (Views: 9313.4ms | ActiveRecord: 0.0ms | Allocations: 4493275)
+
+
