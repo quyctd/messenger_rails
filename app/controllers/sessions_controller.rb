@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
+  before_action :user_from_form, only: [:create]
+
   def new
     @account = User.new
   end
 
   def create
-    @user = User.find_by(username: params[:user][:username].downcase)
     if @user&.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       flash[:success] = 'You have successfully logged in'
@@ -13,5 +14,11 @@ class SessionsController < ApplicationController
       flash.now[:negative] = 'Username or password not correct'
       render 'new'
     end
+  end
+
+  private
+
+  def user_from_form
+    @user = User.find_by(username: params[:user][:username].downcase)
   end
 end
