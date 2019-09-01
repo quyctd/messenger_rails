@@ -890,3 +890,40 @@ Processing by ChatroomController#index as HTML
 Completed 200 OK in 2864ms (Views: 2850.1ms | ActiveRecord: 1.7ms | Allocations: 1593433)
 
 
+Started GET "/" for 127.0.0.1 at 2019-09-01 15:34:35 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 694.2ms | Allocations: 175818)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 698.5ms | Allocations: 176880)
+Completed 500 Internal Server Error in 708ms (ActiveRecord: 0.3ms | Allocations: 178273)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `msg' for #<#<Class:0x00007fd7c5f591d8>:0x00007fd7c5f63750>):
+    1: <div class="event">
+    2:   <div class="content">
+    3:     <div class="summary">
+    4:       <a><%= msg.user.username %></a> : <%=  msg.body %>
+    5:     </div>
+    6:   </div>
+    7: </div>
+  
+app/views/messages/_message.html.erb:4
+app/views/chatroom/index.html.erb:12
+Started GET "/" for 127.0.0.1 at 2019-09-01 16:33:26 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (1.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:4
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 4.5ms | Allocations: 867)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1912)
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 257)
+Completed 200 OK in 238ms (Views: 230.6ms | ActiveRecord: 2.7ms | Allocations: 65767)
+
+
