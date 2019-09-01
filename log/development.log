@@ -247,3 +247,138 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 14086)
 
 
+Started GET "/login" for 127.0.0.1 at 2019-08-19 23:52:29 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 77)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/soramac/Documents/Pixta/Ruby Course/message_me/public/packs
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 107)
+Completed 200 OK in 5273ms (Views: 5271.5ms | ActiveRecord: 0.0ms | Allocations: 16030)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <main> at /Users/soramac/Documents/Pixta/Ruby Course/message_me/config/environment.rb:5)
+Started GET "/login" for 127.0.0.1 at 2019-08-19 23:52:44 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 301)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 114)
+Completed 200 OK in 1476ms (Views: 1468.2ms | ActiveRecord: 0.0ms | Allocations: 1488623)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-19 23:53:47 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 81)
+  Rendered layouts/_navbar.html.erb (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 14160)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <main> at /Users/soramac/Documents/Pixta/Ruby Course/message_me/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2019-08-19 23:55:12 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 251)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/soramac/Documents/Pixta/Ruby Course/message_me/public/packs
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 114)
+Completed 200 OK in 4272ms (Views: 4263.1ms | ActiveRecord: 0.0ms | Allocations: 1489815)
+
+
+Started GET "/" for 127.0.0.1 at 2019-08-19 23:55:42 +0700
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_navbar.html.erb (Duration: 0.0ms | Allocations: 6)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 13439)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <main> at /Users/soramac/Documents/Pixta/Ruby Course/message_me/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2019-08-19 23:58:10 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 200)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/soramac/Documents/Pixta/Ruby Course/message_me/public/packs
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 114)
+Completed 200 OK in 3979ms (Views: 3970.5ms | ActiveRecord: 0.0ms | Allocations: 1489812)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <main> at /Users/soramac/Documents/Pixta/Ruby Course/message_me/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2019-08-20 00:00:31 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 200)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/soramac/Documents/Pixta/Ruby Course/message_me/public/packs
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 114)
+Completed 200 OK in 3729ms (Views: 3715.1ms | ActiveRecord: 0.0ms | Allocations: 1489556)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <main> at /Users/soramac/Documents/Pixta/Ruby Course/message_me/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2019-08-20 00:01:40 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 301)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 114)
+Completed 200 OK in 3851ms (Views: 3842.7ms | ActiveRecord: 0.0ms | Allocations: 1488975)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <main> at /Users/soramac/Documents/Pixta/Ruby Course/message_me/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2019-08-20 00:02:56 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 200)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/soramac/Documents/Pixta/Ruby Course/message_me/public/packs
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 114)
+Completed 200 OK in 5413ms (Views: 5404.4ms | ActiveRecord: 0.0ms | Allocations: 1498816)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <main> at /Users/soramac/Documents/Pixta/Ruby Course/message_me/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2019-08-20 00:05:06 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 281)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/soramac/Documents/Pixta/Ruby Course/message_me/public/packs
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 114)
+Completed 200 OK in 3693ms (Views: 3685.1ms | ActiveRecord: 0.0ms | Allocations: 1499370)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <main> at /Users/soramac/Documents/Pixta/Ruby Course/message_me/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2019-08-20 00:06:42 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 283)
+[Webpacker] Compiling…
+[Webpacker] Compiled all packs in /Users/soramac/Documents/Pixta/Ruby Course/message_me/public/packs
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 114)
+Completed 200 OK in 3822ms (Views: 3813.0ms | ActiveRecord: 0.0ms | Allocations: 1499369)
+
+
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <main> at /Users/soramac/Documents/Pixta/Ruby Course/message_me/config/environment.rb:5)
+Started GET "/" for 127.0.0.1 at 2019-08-20 00:10:25 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 200)
+[Webpacker] Compiling…
+[Webpacker] Compilation failed:
+
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 114)
+Completed 200 OK in 4108ms (Views: 4099.0ms | ActiveRecord: 0.0ms | Allocations: 1498061)
+
+
