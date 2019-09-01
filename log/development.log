@@ -487,3 +487,12 @@ Processing by ChatroomController#index as HTML
 Completed 200 OK in 9325ms (Views: 9313.4ms | ActiveRecord: 0.0ms | Allocations: 4493275)
 
 
+Started GET "/" for ::1 at 2019-09-01 11:50:48 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 78)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 139)
+Completed 200 OK in 1902ms (Views: 1899.3ms | ActiveRecord: 0.0ms | Allocations: 1307077)
+
+
