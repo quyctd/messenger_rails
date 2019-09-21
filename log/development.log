@@ -3852,3 +3852,861 @@ Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 2.7ms | Allocations: 3673
 
 
 ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : perfect\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started POST "/message" for 127.0.0.1 at 2019-09-21 16:41:53 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"fTwB99OjZMLRZIKdgT+49SIcP10Z36GhjgMnjrMzUJtxUXQDr09XcArcjoLhVqSSiid/lvD0F55gRyhNKmJ7MQ==", "message"=>{"body"=>"ghjk"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "ghjk"], ["user_id", 2], ["created_at", "2019-09-21 09:41:53.848518"], ["updated_at", "2019-09-21 09:41:53.848518"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : ghjk\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.5ms | Allocations: 3694)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : ghjk\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started GET "/" for 127.0.0.1 at 2019-09-21 16:52:50 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of messages/_message.html.erb [20 times] (Duration: 0.3ms | Allocations: 210)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2484)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 1544)
+  Rendered layouts/_notice.html.erb (Duration: 0.2ms | Allocations: 17)
+Completed 200 OK in 380ms (Views: 376.4ms | ActiveRecord: 1.2ms | Allocations: 80805)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:52:50 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 16:52:51 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:52:51 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for 127.0.0.1 at 2019-09-21 16:53:05 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of messages/_message.html.erb [20 times] (Duration: 0.6ms | Allocations: 210)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 2484)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 1542)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 268ms (Views: 264.5ms | ActiveRecord: 1.1ms | Allocations: 80261)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:53:05 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 16:53:06 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:53:06 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for 127.0.0.1 at 2019-09-21 16:53:09 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"91yTf1W10j6f2TCZ1Z05HTTE+4arcG3K0wAqhqK2l3f7MeaLKVnhjERhPIa19CV6nP+7TUJb2/U9RCVFO+e83Q==", "message"=>{"body"=>"clear"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "clear"], ["user_id", 2], ["created_at", "2019-09-21 09:53:09.589956"], ["updated_at", "2019-09-21 09:53:09.589956"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : clear\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.5ms | Allocations: 3678)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : clear\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started GET "/" for 127.0.0.1 at 2019-09-21 16:54:21 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (1.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of messages/_message.html.erb [21 times] (Duration: 0.5ms | Allocations: 220)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2492)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.9ms | Allocations: 1542)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 254ms (Views: 250.1ms | ActiveRecord: 1.5ms | Allocations: 80676)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:54:21 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 16:54:22 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:54:22 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for 127.0.0.1 at 2019-09-21 16:54:26 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"hHaEOdQJijsxv1PAI1nXw7mhtGssQfx9dUiGlDtH9PmIG/HNqOW5ieoHX99DMMukEZr0oMVqSkKbDIlXohbfUw==", "message"=>{"body"=>"clear again"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "clear again"], ["user_id", 2], ["created_at", "2019-09-21 09:54:26.469932"], ["updated_at", "2019-09-21 09:54:26.469932"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : clear again\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 3681)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : clear again\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started GET "/" for 127.0.0.1 at 2019-09-21 16:55:11 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of messages/_message.html.erb [22 times] (Duration: 0.3ms | Allocations: 230)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2518)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 5.8ms | Allocations: 1544)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 300ms (Views: 296.7ms | ActiveRecord: 0.8ms | Allocations: 81557)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:55:11 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 16:55:12 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:55:12 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for 127.0.0.1 at 2019-09-21 16:55:48 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of messages/_message.html.erb [22 times] (Duration: 0.3ms | Allocations: 230)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2518)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 1542)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 249ms (Views: 246.9ms | ActiveRecord: 0.5ms | Allocations: 80764)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:55:48 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 16:55:49 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:55:49 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for 127.0.0.1 at 2019-09-21 16:56:17 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of messages/_message.html.erb [22 times] (Duration: 0.3ms | Allocations: 230)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2536)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.6ms | Allocations: 1544)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 326ms (Views: 321.9ms | ActiveRecord: 1.0ms | Allocations: 79929)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:56:18 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 16:56:18 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:56:18 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for 127.0.0.1 at 2019-09-21 16:56:31 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of messages/_message.html.erb [22 times] (Duration: 0.6ms | Allocations: 230)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2518)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 18.0ms | Allocations: 1542)
+  Rendered layouts/_notice.html.erb (Duration: 0.5ms | Allocations: 17)
+Completed 200 OK in 417ms (Views: 412.8ms | ActiveRecord: 2.0ms | Allocations: 81581)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:56:31 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 16:56:32 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:56:32 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for 127.0.0.1 at 2019-09-21 16:56:37 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"0KxkHJ67uT2CcI88tJR/O/XL0khXlEJL3dToRN9cxTPcwRHo4leKj1nIgyPU/WNcXfCSg76/9HQzkOeHRg3umQ==", "message"=>{"body"=>"hihihihihi"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "hihihihihi"], ["user_id", 2], ["created_at", "2019-09-21 09:56:37.370539"], ["updated_at", "2019-09-21 09:56:37.370539"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : hihihihihi\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 2.9ms | Allocations: 3694)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : hihihihihi\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started GET "/" for 127.0.0.1 at 2019-09-21 16:57:34 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (1.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of messages/_message.html.erb [23 times] (Duration: 2.9ms | Allocations: 364)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 21.9ms | Allocations: 3083)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 5.4ms | Allocations: 1831)
+  Rendered layouts/_notice.html.erb (Duration: 0.7ms | Allocations: 158)
+Completed 200 OK in 513ms (Views: 506.5ms | ActiveRecord: 3.1ms | Allocations: 83217)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:57:34 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 16:57:35 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:57:35 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for 127.0.0.1 at 2019-09-21 16:57:39 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"BmscMNosjKv0Z34/9gh72ikqqmdZZFMYQjQaAl+tDTYKBmnEpsC/GS/fciCWYWe9gRHqrLBP5SescBXBxvwmnA==", "message"=>{"body"=>""}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 25ms (ActiveRecord: 0.2ms | Allocations: 7421)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-21 16:59:41 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering chatroom/index.html.erb within layouts/application
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/views/chatroom/index.html.erb:12
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/views/chatroom/index.html.erb:12
+  Rendered collection of messages/_message.html.erb [23 times] (Duration: 0.3ms | Allocations: 240)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2557)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 1549)
+  Rendered layouts/_notice.html.erb (Duration: 0.0ms | Allocations: 17)
+Completed 200 OK in 6401ms (Views: 6397.4ms | ActiveRecord: 1.9ms | Allocations: 2880133)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:59:47 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 16:59:48 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 16:59:48 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:00:00 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"Dc9cmOI53rMuuyZ9i7RkmmEJ7mlKO5jjkqLBDZfVklkBoilsntXtAfUDKmLr3Xj9yTKuoqMQLtx85s7ODoS58w==", "message"=>{"body"=>""}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.1ms | Allocations: 2326)
+
+
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:10:15 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.5ms | Allocations: 29236)
+
+
+  
+NoMethodError (undefined method `includes' for #<Array:0x00007ffe6e4fb6d0>
+Did you mean?  include?):
+  
+app/controllers/chatroom_controller.rb:6:in `index'
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:10:45 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered collection of messages/_message.html.erb [20 times] (Duration: 0.3ms | Allocations: 213)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 601)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.3ms | Allocations: 1548)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 287ms (Views: 268.1ms | ActiveRecord: 2.3ms | Allocations: 89907)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 17:10:46 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:10:46 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:10:51 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"mXjGmFbTqJrZWu7I25D0seyAc43WYFqfWTJAs+Aq7SOVFbNsKj+bKALi4te7+ejWRLszRj9L7KC3dk9weXvGiQ==", "message"=>{"body"=>"hello"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "hello"], ["user_id", 2], ["created_at", "2019-09-21 10:10:51.843464"], ["updated_at", "2019-09-21 10:10:51.843464"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.4ms | Allocations: 136)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : hello\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 10ms (Views: 1.3ms | ActiveRecord: 2.1ms | Allocations: 4608)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : hello\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:10:55 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"mXjGmFbTqJrZWu7I25D0seyAc43WYFqfWTJAs+Aq7SOVFbNsKj+bKALi4te7+ejWRLszRj9L7KC3dk9weXvGiQ==", "message"=>{"body"=>"oh wow"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "oh wow"], ["user_id", 2], ["created_at", "2019-09-21 10:10:55.887510"], ["updated_at", "2019-09-21 10:10:55.887510"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : oh wow\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 2.0ms | Allocations: 3676)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : oh wow\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:10:57 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"mXjGmFbTqJrZWu7I25D0seyAc43WYFqfWTJAs+Aq7SOVFbNsKj+bKALi4te7+ejWRLszRj9L7KC3dk9weXvGiQ==", "message"=>{"body"=>"it work"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "it work"], ["user_id", 2], ["created_at", "2019-09-21 10:10:57.548563"], ["updated_at", "2019-09-21 10:10:57.548563"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : it work\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 2.1ms | Allocations: 3680)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : it work\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:10:59 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"mXjGmFbTqJrZWu7I25D0seyAc43WYFqfWTJAs+Aq7SOVFbNsKj+bKALi4te7+ejWRLszRj9L7KC3dk9weXvGiQ==", "message"=>{"body"=>"nanii"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "nanii"], ["user_id", 2], ["created_at", "2019-09-21 10:10:59.712516"], ["updated_at", "2019-09-21 10:10:59.712516"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : nanii\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 3671)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : nanii\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:11:30 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"mXjGmFbTqJrZWu7I25D0seyAc43WYFqfWTJAs+Aq7SOVFbNsKj+bKALi4te7+ejWRLszRj9L7KC3dk9weXvGiQ==", "message"=>{"body"=>"entered"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "entered"], ["user_id", 2], ["created_at", "2019-09-21 10:11:30.226363"], ["updated_at", "2019-09-21 10:11:30.226363"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : entered\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 3673)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : entered\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:13:34 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"mXjGmFbTqJrZWu7I25D0seyAc43WYFqfWTJAs+Aq7SOVFbNsKj+bKALi4te7+ejWRLszRj9L7KC3dk9weXvGiQ==", "message"=>{"body"=>"enter second"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "enter second"], ["user_id", 2], ["created_at", "2019-09-21 10:13:34.323264"], ["updated_at", "2019-09-21 10:13:34.323264"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : enter second\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 3678)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : enter second\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:13:49 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"mXjGmFbTqJrZWu7I25D0seyAc43WYFqfWTJAs+Aq7SOVFbNsKj+bKALi4te7+ejWRLszRj9L7KC3dk9weXvGiQ==", "message"=>{"body"=>"adfa"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "adfa"], ["user_id", 2], ["created_at", "2019-09-21 10:13:49.361288"], ["updated_at", "2019-09-21 10:13:49.361288"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : adfa\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 4.5ms | Allocations: 3673)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : adfa\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:15:59 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered collection of messages/_message.html.erb [20 times] (Duration: 0.8ms | Allocations: 334)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1031)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 5.7ms | Allocations: 1831)
+  Rendered layouts/_notice.html.erb (Duration: 0.3ms | Allocations: 158)
+Completed 200 OK in 78ms (Views: 68.0ms | ActiveRecord: 1.1ms | Allocations: 70691)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:15:59 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 17:16:00 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:16:00 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:16:08 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"aJOV9AIkvvHmu6Wml1R/g31j1dARgnqPDGoPzKw0LNVk/uAAfsiNQz0Dqbn3PWPk1ViVG/ipzLDiLgAPNWUHfw==", "message"=>{"body"=>"olala"}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "olala"], ["user_id", 2], ["created_at", "2019-09-21 10:16:08.222094"], ["updated_at", "2019-09-21 10:16:08.222094"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.5ms | Allocations: 131)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : olala\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 2.2ms | Allocations: 4136)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : olala\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:16:24 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered collection of messages/_message.html.erb [20 times] (Duration: 1.6ms | Allocations: 334)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1030)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 1831)
+  Rendered layouts/_notice.html.erb (Duration: 0.3ms | Allocations: 158)
+Completed 200 OK in 73ms (Views: 68.2ms | ActiveRecord: 0.7ms | Allocations: 70628)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:16:24 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 17:16:25 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:16:25 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:16:27 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"sYJORRaX5/787N3y0vn8b8NACV9rReEMnFV03OcliTG97zuxanvUTCdU0e2ykOAIa3tJlIJuVzNyEXsffnSimw==", "message"=>{"body"=>"called"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "called"], ["user_id", 2], ["created_at", "2019-09-21 10:16:27.372932"], ["updated_at", "2019-09-21 10:16:27.372932"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.4ms | Allocations: 131)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : called\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 2.4ms | Allocations: 4120)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : called\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:17:06 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered collection of messages/_message.html.erb [20 times] (Duration: 1.5ms | Allocations: 210)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 530)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.2ms | Allocations: 1546)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 67ms (Views: 61.8ms | ActiveRecord: 0.7ms | Allocations: 68308)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:17:06 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 17:17:06 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:17:06 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:17:44 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY create_at DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.3ms | Allocations: 10408)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: create_at):
+  
+app/models/message.rb:4:in `block in <class:Message>'
+app/controllers/chatroom_controller.rb:6:in `index'
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:18:12 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY messages.create_at DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.8ms | Allocations: 10412)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: messages.create_at):
+  
+app/models/message.rb:4:in `block in <class:Message>'
+app/controllers/chatroom_controller.rb:6:in `index'
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:18:56 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered collection of messages/_message.html.erb [20 times] (Duration: 0.3ms | Allocations: 213)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 596)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 8.4ms | Allocations: 1548)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 176ms (Views: 152.7ms | ActiveRecord: 2.9ms | Allocations: 77099)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 17:18:57 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:18:57 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:19:03 +0700
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered collection of messages/_message.html.erb [20 times] (Duration: 0.4ms | Allocations: 210)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 523)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.2ms | Allocations: 1542)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 72ms (Views: 62.1ms | ActiveRecord: 1.1ms | Allocations: 68303)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:19:03 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 17:19:04 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:19:04 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (1.3ms)[0m  [1m[34mSELECT create_at FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "create_at" FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:25:45 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered collection of messages/_message.html.erb [20 times] (Duration: 0.3ms | Allocations: 213)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 596)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 2.1ms | Allocations: 1546)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 78ms (Views: 59.8ms | ActiveRecord: 0.8ms | Allocations: 76495)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 17:25:45 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:25:45 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "create_at" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (1.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" ASC LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2019-09-21 17:31:21 +0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ChatroomController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/models/message.rb:4:in `block in <class:Message>'
+  Rendering chatroom/index.html.erb within layouts/application
+  Rendered collection of messages/_message.html.erb [20 times] (Duration: 0.4ms | Allocations: 209)
+  Rendered chatroom/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 592)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layouts/_navbar.html.erb (Duration: 3.3ms | Allocations: 1546)
+  Rendered layouts/_notice.html.erb (Duration: 0.1ms | Allocations: 17)
+Completed 200 OK in 78ms (Views: 55.6ms | ActiveRecord: 1.4ms | Allocations: 76441)
+
+
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 17:31:22 +0700
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:31:22 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Started POST "/message" for 127.0.0.1 at 2019-09-21 17:31:26 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"authenticity_token"=>"1g0S2Mq9J9tLJsYDVZ8Aj9y4o6WFJEaUilZQ+nFAVG7aYGcstlEUaZCeyhw19hzodIPjbmwP8KtkEl856BF/xA==", "message"=>{"body"=>"aduuuu"}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[36mMessage Create (1.7ms)[0m  [1m[32mINSERT INTO "messages" ("body", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "aduuuu"], ["user_id", 2], ["created_at", "2019-09-21 10:31:26.387748"], ["updated_at", "2019-09-21 10:31:26.387748"]]
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:8:in `create'
+  Rendered messages/_message.html.erb (Duration: 0.1ms | Allocations: 11)
+[ActionCable] Broadcasting to chatroom_channel: {:message=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : aduuuu\n    </div>\n  </div>\n</div>"}
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 3.6ms | Allocations: 4310)
+
+
+ChatroomChannel transmitting {"message"=>"<div class=\"event\">\n  <div class=\"content\">\n    <div class=\"summary\">\n      <a>datnt</a> : aduuuu\n    </div>\n  </div>\n</div>"} (via streamed from chatroom_channel)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:51:23 +0700
+ChatroomChannel stopped streaming from chatroom_channel
+Started GET "/cable" for 127.0.0.1 at 2019-09-21 17:51:30 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 17:51:30 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ChatroomChannel is transmitting the subscription confirmation
+ChatroomChannel is streaming from chatroom_channel
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2019-09-21 19:34:17 +0700
+ChatroomChannel stopped streaming from chatroom_channel

@@ -24,6 +24,12 @@ scroll_bottom = function() {
     }
 };
 
+clear_submit = function() {
+    $("#input-form").bind("ajax:complete", function(event,xhr,status){
+        $('#message_body').val('');
+    });
+};
+
 $(document).on('turbolinks:load', function() {
      $('.ui.dropdown').dropdown();
     scroll_bottom();
@@ -32,4 +38,5 @@ $(document).on('turbolinks:load', function() {
             ;
         })
     ;
+    clear_submit();
 });
