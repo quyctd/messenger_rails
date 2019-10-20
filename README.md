@@ -1,2 +1,2 @@
-# message_me_rails
-Ruby on Rails: Realtime Messenger App
+# messenger_rails
+Ruby on Rails: Realtime Messenger Website
